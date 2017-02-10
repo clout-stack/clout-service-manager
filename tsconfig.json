@@ -12,7 +12,7 @@
   },
   "compileOnSave": false,
   "files": [
-    "./src/index.ts",
+    "./src/server.ts",
     "./typings/main.d.ts"
   ]
 }

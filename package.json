@@ -7,6 +7,8 @@
     "dist/"
   ],
   "scripts": {
+    "start": "npm run build; node dist/server.js",
+    "watch": "node -e \"console.log('implement watch');\"",
     "build": "tsc",
     "clean": "rimraf dist",
     "deploy": "git pull --rebase origin master && git push origin master",
