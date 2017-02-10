@@ -1,0 +1,48 @@
+{
+  "name": "clout-service-manager",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "deploy": "git pull --rebase origin master && git push origin master",
+    "major": "npm version major && npm publish",
+    "minor": "npm version minor && npm publish",
+    "patch": "npm version patch && npm publish",
+    "postinstall": "typings install",
+    "postpublish": "git push origin master --follow-tags",
+    "prepublish": "npm run build -s",
+    "test": "ts-node node_modules/.bin/_mocha test/*.spec.ts",
+    "toc": "doctoc --github --title \"# Changelog\" CHANGELOG.md",
+    "tsc:watch": "npm run build -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muhammaddadu/clout-service-manager.git"
+  },
+  "keywords": [
+    "node",
+    "typescript"
+  ],
+  "author": "Muhammad Dadu <muhammad@dadu.co>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/muhammaddadu/clout-service-manager/issues"
+  },
+  "homepage": "https://github.com/muhammaddadu/clout-service-manager#readme",
+  "dependencies": {
+    "clout-js": "^1.1.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "doctoc": "^1.0.0",
+    "mocha": "^2.4.5",
+    "ts-node": "^0.7.2",
+    "typescript": "^1.8.9",
+    "typings": "^0.7.9"
+  }
+}
